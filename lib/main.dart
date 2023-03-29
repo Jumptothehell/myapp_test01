@@ -18,41 +18,8 @@ class MyApp extends StatelessWidget {
 
       title: 'Flutter Demo',
       theme: ThemeData(
-        // primaryColor: const Color(0xff32ac96),
         primarySwatch: Palette.kToDark,
         scaffoldBackgroundColor: const Color(0xff8FE1A1),
-        // fontFamily: GoogleFonts.openSans().fontFamily,
-        //   textTheme: const TextTheme(
-        //       bodySmall: TextStyle(
-        //           fontSize: 16, fontWeight: FontWeight.w400, letterSpacing: 0.4),
-        //       bodyMedium: TextStyle(
-        //           fontSize: 20, fontWeight: FontWeight.w400, letterSpacing: 0.25),
-        //       bodyLarge: TextStyle(
-        //           fontSize: 24, fontWeight: FontWeight.w400, letterSpacing: 0.5),
-        //       labelSmall: TextStyle(
-        //           fontSize: 16, fontWeight: FontWeight.w500, letterSpacing: 0.5),
-        //       labelMedium: TextStyle(
-        //           fontSize: 16, fontWeight: FontWeight.w500, letterSpacing: 0.5),
-        //       labelLarge: TextStyle(
-        //           fontSize: 20, fontWeight: FontWeight.w500, letterSpacing: 0.1),
-        //       titleSmall: TextStyle(
-        //           fontSize: 20, fontWeight: FontWeight.w500, letterSpacing: 0.1),
-        //       titleMedium: TextStyle(
-        //           fontSize: 24, fontWeight: FontWeight.w500, letterSpacing: 0.15),
-        //       titleLarge: TextStyle(
-        //           fontSize: 28, fontWeight: FontWeight.w400, letterSpacing: 0),
-        //       headlineSmall: TextStyle(
-        //           fontSize: 32, fontWeight: FontWeight.w400, letterSpacing: 0),
-        //       headlineMedium: TextStyle(
-        //           fontSize: 36, fontWeight: FontWeight.w400, letterSpacing: 0),
-        //       headlineLarge: TextStyle(
-        //           fontSize: 40, fontWeight: FontWeight.w400, letterSpacing: 0),
-        //       displaySmall: TextStyle(
-        //           fontSize: 44, fontWeight: FontWeight.w400, letterSpacing: 0),
-        //       displayMedium: TextStyle(
-        //           fontSize: 52, fontWeight: FontWeight.w400, letterSpacing: 0),
-        //       displayLarge: TextStyle(
-        //           fontSize: 64, fontWeight: FontWeight.w400, letterSpacing: 0)),
       ),
       home: const MyHomePage(title: 'Project'),
     );
@@ -106,9 +73,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 width: 200,
                 height: 50,
                 child: Row(
-                  // crossAxisAlignment: CrossAxisAlignment.center,
                   mainAxisAlignment: MainAxisAlignment.center,
-                  // mainAxisSize: MainAxisSize.min,
                   children: const [
                     Text(
                       "โครงการของคุณ",
@@ -141,37 +106,6 @@ class _MyHomePageState extends State<MyHomePage> {
                   //     : null),
                 ));
               },
-              // children: const <Widget>[
-              //   Card(
-              //     child: ListTile(
-              //       leading: Icon(
-              //         Icons.location_pin,
-              //         color: Colors.red,
-              //         size: 30,
-              //       ),
-              //       title: Text("ชื่อโครงการ 1"),
-              //       trailing: Icon(Icons.more_vert),
-              //     ),
-              //   ),
-              //   Card(
-              //     child: ListTile(
-              //       leading:
-              //           Icon(Icons.location_pin, color: Colors.red, size: 30),
-              //       title: Text("ชื่อโครงการ 2"),
-              //       // subtitle: notSho,
-              //       trailing: Icon(Icons.more_vert),
-              //     ),
-              //   ),
-              //   Card(
-              //     child: ListTile(
-              //       leading:
-              //           Icon(Icons.location_pin, color: Colors.red, size: 30),
-              //       title: Text("ชื่อโครงการ 3"),
-              //       subtitle: Text("ปิดโครงการ"),
-              //       trailing: Icon(Icons.more_vert),
-              //     ),
-              //   )
-              // ],
             ),
           ),
         ],
