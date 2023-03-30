@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:myapp_test01/config/palette.dart';
+import 'package:myapp_test01/projectdetail.dart';
 // import 'package:google_fonts/google_fonts.dart';
 
 void main() {
@@ -119,7 +120,12 @@ class _MyHomePageState extends State<MyHomePage> {
         floatingActionButton: Padding(
           padding: const EdgeInsets.only(bottom: 15.0, right: 15.0),
           child: FloatingActionButton(
-            onPressed: () {},
+            foregroundColor: Palette.kToDark,
+            onPressed: () {
+              Navigator.push(context, MaterialPageRoute(builder: (context) {
+                return const ProjectDetail();
+              }));
+            },
             tooltip: 'Increment',
             child: const Icon(Icons.add),
           ),

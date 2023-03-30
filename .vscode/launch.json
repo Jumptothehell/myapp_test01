@@ -23,7 +23,7 @@
         },
         {
             "name": "myapp_test01 (test)",
-            "program": "lib/mywidget.dart",
+            "program": "lib/projectdetail.dart",
             "request": "launch",
             "type": "dart"
         }
