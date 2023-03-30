@@ -21,7 +21,9 @@ class _ProjectDetailState extends State<ProjectDetail> {
     return Scaffold(
         appBar: AppBar(
           leading: IconButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.pop(context);
+            },
             icon: const Icon(Icons.chevron_left),
             color: Colors.black,
           ),

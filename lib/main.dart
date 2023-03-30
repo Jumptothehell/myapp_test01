@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:myapp_test01/config/palette.dart';
 import 'package:myapp_test01/projectdetail.dart';
+import 'dart:developer' as developer;
 // import 'package:google_fonts/google_fonts.dart';
 
 void main() {
@@ -35,15 +36,18 @@ class MyHomePage extends StatefulWidget {
   State<MyHomePage> createState() => _MyHomePageState();
 }
 
+void testPrint() {
+  developer.log("Taped");
+}
+
 class _MyHomePageState extends State<MyHomePage> {
-  int selectedIndex = 0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
           leading: IconButton(
             onPressed: () {},
-            icon: const Icon(Icons.chevron_left),
+            icon: const Icon(Icons.menu),
             color: Colors.black,
           ),
           title: Container(
@@ -96,22 +100,43 @@ class _MyHomePageState extends State<MyHomePage> {
                 itemBuilder: (context, index) {
                   return Card(
                       child: ListTile(
-                    leading: const Icon(
-                      Icons.location_pin,
-                      color: Colors.red,
-                      size: 30,
-                    ),
-                    title: Text("ชื่อโครงการ $index"),
-                    trailing: const Text(
-                      "ปิดโครงการ",
-                      style: TextStyle(
-                          color: Colors.blue,
-                          decoration: TextDecoration.underline),
-                    ),
-                    // subtitle: selectedIndex == index
-                    //     ? const Text("ปิดโครงการ")
-                    //     : null),
-                  ));
+                          leading: const Icon(
+                            Icons.location_pin,
+                            color: Colors.red,
+                            size: 30,
+                          ),
+                          title: Text("ชื่อโครงการ $index"),
+                          trailing: InkWell(
+                            onTap: () {
+                              showDialog(
+                                  context: context,
+                                  builder: (context) => AlertDialog(
+                                        title: const Text('ALEART'),
+                                        content: const Text(
+                                            'คุณต้องการปิดโครงการนี้ใช่หรือไม่ ?'),
+                                        actions: [
+                                          TextButton(
+                                              onPressed: () =>
+                                                  Navigator.pop(context),
+                                              child: const Text('CANEL')),
+                                          TextButton(
+                                              onPressed: () =>
+                                                  Navigator.pop(context),
+                                              child: const Text('OK'))
+                                        ],
+                                      ));
+                            },
+                            child: const Text(
+                              "ปิดโครงการ",
+                              style: TextStyle(
+                                  color: Colors.blue,
+                                  decoration: TextDecoration.underline),
+                            ),
+                          )
+                          // subtitle: selectedIndex == index
+                          //     ? const Text("ปิดโครงการ")
+                          //     : null),
+                          ));
                 },
               ),
             ),
@@ -120,7 +145,8 @@ class _MyHomePageState extends State<MyHomePage> {
         floatingActionButton: Padding(
           padding: const EdgeInsets.only(bottom: 15.0, right: 15.0),
           child: FloatingActionButton(
-            foregroundColor: Palette.kToDark,
+            foregroundColor: Colors.black,
+            backgroundColor: Palette.kToDark,
             onPressed: () {
               Navigator.push(context, MaterialPageRoute(builder: (context) {
                 return const ProjectDetail();
