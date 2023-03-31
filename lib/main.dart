@@ -47,7 +47,7 @@ class _MyHomePageState extends State<MyHomePage> {
         appBar: AppBar(
           leading: IconButton(
             onPressed: () {},
-            icon: const Icon(Icons.menu),
+            icon: const Icon(Icons.chevron_left),
             color: Colors.black,
           ),
           title: Container(
@@ -118,7 +118,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                           TextButton(
                                               onPressed: () =>
                                                   Navigator.pop(context),
-                                              child: const Text('CANEL')),
+                                              child: const Text('CANCEL')),
                                           TextButton(
                                               onPressed: () =>
                                                   Navigator.pop(context),
