@@ -10,8 +10,9 @@ class YourProject extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: topAppBar(),
-      body: basicBody(content(context)),
+      appBar: topAppBar(context, const YourProject()),
+      // appBar: topAppBar(context, "const main()" as Widget),
+      body: basicBody(content(context), "โครงการของคุณ"),
       floatingActionButton: Padding(
         padding: const EdgeInsets.only(bottom: 15.0, right: 15.0),
         child: FloatingActionButton(
@@ -64,10 +65,10 @@ Container content(BuildContext context) {
                                 actions: [
                                   TextButton(
                                       onPressed: () => Navigator.pop(context),
-                                      child: const Text('CANCEL')),
+                                      child: const Text('ยกเลิก')),
                                   TextButton(
                                       onPressed: () => Navigator.pop(context),
-                                      child: const Text('OK'))
+                                      child: const Text('ใช่'))
                                 ],
                               ));
                     },

@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
 
-AppBar topAppBar() {
+AppBar topAppBar(BuildContext context, Widget page) {
   return AppBar(
     leading: IconButton(
-      onPressed: () {},
+      onPressed: () {
+        Navigator.push(context, MaterialPageRoute(builder: ((context) {
+          return page;
+        })));
+      },
       icon: const Icon(Icons.chevron_left),
       color: Colors.black,
     ),
@@ -19,7 +23,7 @@ AppBar topAppBar() {
   );
 }
 
-Stack basicBody(Container content) {
+Stack basicBody(Container content, titlename) {
   return Stack(
     children: [
       Container(
@@ -34,14 +38,14 @@ Stack basicBody(Container content) {
               RoundedRectangleBorder(borderRadius: BorderRadius.circular(50)),
           color: const Color(0xff387AC4),
           child: SizedBox(
-            width: 200,
+            width: 300,
             height: 50,
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
-              children: const [
+              children: [
                 Text(
-                  "โครงการของคุณ",
-                  style: TextStyle(
+                  titlename,
+                  style: const TextStyle(
                       color: Colors.white,
                       fontSize: 20,
                       fontWeight: FontWeight.bold),

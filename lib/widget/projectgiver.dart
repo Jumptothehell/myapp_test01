@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:myapp_test01/buildcall.dart';
+import 'package:myapp_test01/widget/giverdetail.dart';
+import 'package:myapp_test01/widget/yourproject.dart';
 
 void main() {
   runApp(const MaterialApp(
@@ -15,14 +17,47 @@ class ProjectGiver extends StatefulWidget {
 }
 
 Container content(BuildContext context) {
-  return Container();
+  return Container(
+    margin: const EdgeInsets.only(top: 90, left: 40, right: 40, bottom: 20),
+    child: ListView.builder(
+        itemCount: 5,
+        itemBuilder: (context, index) {
+          return Card(
+              child: ListTile(
+                  leading: const Icon(
+                    Icons.location_pin,
+                    color: Colors.red,
+                    size: 30,
+                  ),
+                  title: InkWell(
+                    onTap: () {
+                      Navigator.push(context, MaterialPageRoute(
+                        builder: (context) {
+                          return const GiverDetail();
+                        },
+                      ));
+                    },
+                    child: Text("ผู้ให้ $index"),
+                  ),
+                  trailing: const InkWell(
+                    child: Text(
+                      "อนุมัติแล้ว",
+                      style: TextStyle(
+                          color: Colors.blue,
+                          decoration: TextDecoration.underline),
+                    ),
+                  )));
+        }),
+  );
 }
 
 class _ProjectGiverState extends State<ProjectGiver> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: topAppBar(),
-        body: Scrollbar(child: basicBody((content(context)))));
+        appBar: topAppBar(context, const YourProject()),
+        // appBar: topAppBar(context, "const YourProject()" as Widget),
+        body: Scrollbar(
+            child: basicBody((content(context)), "ผู้ให้ในโครงการของคุณ")));
   }
 }
