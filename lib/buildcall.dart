@@ -8,7 +8,9 @@ AppBar topAppBar(BuildContext context, Widget page) {
           return page;
         })));
       },
-      icon: const Icon(Icons.chevron_left),
+      icon: const Icon(
+        Icons.chevron_left,
+      ),
       color: Colors.black,
     ),
     title: Container(
@@ -16,7 +18,7 @@ AppBar topAppBar(BuildContext context, Widget page) {
       child: Image.asset(
         'assets/img/Logo.png',
         fit: BoxFit.contain,
-        scale: 8,
+        scale: 10,
       ),
     ),
     centerTitle: true,
@@ -60,13 +62,13 @@ Stack basicBody(Container content, titlename) {
   );
 }
 
-SingleChildScrollView scrollWidget(Container content, titlename) {
+SingleChildScrollView scrollWidget(Container content, titlename, widgetHeight) {
   return SingleChildScrollView(
       scrollDirection: Axis.vertical,
       child: Stack(
         children: [
           Container(
-            height: 1200,
+            height: widgetHeight.toDouble(),
             margin:
                 const EdgeInsets.only(left: 20, right: 20, top: 50, bottom: 20),
             color: Colors.white,
