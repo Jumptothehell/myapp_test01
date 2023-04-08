@@ -31,11 +31,12 @@ class YourProject extends StatelessWidget {
   }
 }
 
+const index = 3;
 Container content(BuildContext context) {
   return Container(
     margin: const EdgeInsets.only(top: 90, left: 40, right: 40, bottom: 20),
     child: ListView.builder(
-        itemCount: 3,
+        itemCount: index,
         itemBuilder: (context, index) {
           return Card(
               child: ListTile(

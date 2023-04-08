@@ -16,7 +16,13 @@ class ProjectDetail extends StatefulWidget {
 }
 
 Container content(BuildContext context) {
-  return Container();
+  return Container(
+    margin: const EdgeInsets.only(top: 90, left: 40, right: 40, bottom: 20),
+    child: const Text(
+      "ชื่อโครงการ :",
+      style: TextStyle(fontSize: 16),
+    ),
+  );
 }
 
 class _ProjectDetailState extends State<ProjectDetail> {
@@ -25,7 +31,6 @@ class _ProjectDetailState extends State<ProjectDetail> {
     return Scaffold(
         appBar: topAppBar(context, const YourProject()),
         // appBar: topAppBar(context, "const YourProject()" as Widget),
-        body: Scrollbar(
-            child: basicBody((content(context)), "รายละเอียดโครงการ")));
+        body: scrollWidget(content(context), "รายละเอียดโครงการ"));
   }
 }

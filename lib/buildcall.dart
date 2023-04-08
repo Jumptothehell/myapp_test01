@@ -59,3 +59,44 @@ Stack basicBody(Container content, titlename) {
     ],
   );
 }
+
+SingleChildScrollView scrollWidget(Container content, titlename) {
+  return SingleChildScrollView(
+      scrollDirection: Axis.vertical,
+      child: Stack(
+        children: [
+          Container(
+            height: 1200,
+            margin:
+                const EdgeInsets.only(left: 20, right: 20, top: 50, bottom: 20),
+            color: Colors.white,
+          ),
+          Container(
+            alignment: Alignment.topCenter,
+            child: Card(
+              margin: const EdgeInsets.all(20),
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(50)),
+              color: const Color(0xff387AC4),
+              child: SizedBox(
+                width: 300,
+                height: 50,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      titlename,
+                      style: const TextStyle(
+                          color: Colors.white,
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ),
+          content
+        ],
+      ));
+}
