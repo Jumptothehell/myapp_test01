@@ -31,11 +31,13 @@ Container content(BuildContext context) {
                   ),
                   title: InkWell(
                     onTap: () {
-                      Navigator.push(context, MaterialPageRoute(
-                        builder: (context) {
-                          return const GiverDetail();
-                        },
-                      ));
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const GiverDetail(),
+                              settings: RouteSettings(
+                                arguments: index,
+                              )));
                     },
                     child: Text("ผู้ให้ $index"),
                   ),
